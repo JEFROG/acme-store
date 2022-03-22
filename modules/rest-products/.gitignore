@@ -1,0 +1,7 @@
+.gradle/
+build/
+target/
+/rest-products-api/out/
+/rest-products-client/out/
+/rest-products-impl/out/
+/rest-products-test/out/

@@ -1,0 +1,3 @@
+Bundle-Name: rest-products-client
+Bundle-SymbolicName: com.acme.rest.store.products.client
+Bundle-Version: 1.0.0

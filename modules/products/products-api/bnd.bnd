@@ -1,0 +1,11 @@
+Bundle-Name: products-api
+Bundle-SymbolicName: com.acme.store.products.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.acme.store.products.exception,\
+    com.acme.store.products.constants,\
+	com.acme.store.products.model,\
+	com.acme.store.products.service,\
+	com.acme.store.products.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../products-service/service.xml

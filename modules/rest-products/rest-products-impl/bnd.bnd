@@ -1,0 +1,3 @@
+Bundle-Name: rest-products-impl
+Bundle-SymbolicName: com.acme.rest.store.products.impl
+Bundle-Version: 1.0.0

@@ -1,0 +1,6 @@
+Bundle-Name: rest-products-api
+Bundle-SymbolicName: com.acme.rest.store.products.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.acme.rest.store.products.dto.v1_0,\
+	com.acme.rest.store.products.resource.v1_0

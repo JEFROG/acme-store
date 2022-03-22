@@ -1,0 +1,30 @@
+{
+	"dependencies": {
+		"@clayui/button": "^3.40.0",
+		"@clayui/form": "^3.47.0",
+		"@clayui/label": "^3.45.0",
+		"@clayui/loading-indicator": "^3.40.0",
+		"@clayui/management-toolbar": "^3.40.0",
+		"@clayui/table": "^3.40.0",
+		"@clayui/alert": "^3.40.0",
+		"@clayui/icon": "^3.40.0",
+		"@clayui/empty-state": "^3.47.0",
+		"react": "16.8.6",
+		"react-dom": "16.8.6",
+		"react-router-dom": "^6.2.2",
+		"formik": "^2.2.9",
+		"axios": "^0.26.1"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-react": "6.24.1",
+		"liferay-npm-bundler": "2.18.2"
+	},
+	"main": "lib/index.es.js",
+	"name": "products-web-react",
+	"scripts": {
+		"build": "babel --source-maps -d build/resources/main/META-INF/resources src/main/resources/META-INF/resources && liferay-npm-bundler"
+	},
+	"version": "1.0.0"
+}

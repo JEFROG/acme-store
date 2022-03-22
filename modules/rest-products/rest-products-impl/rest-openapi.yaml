@@ -1,0 +1,195 @@
+openapi: 3.0.0
+info:
+    description: Used in Liferay 7.4 headless / react portlet example
+    license:
+        name: "Apache 2.0"
+        url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+    title: API for Acme Store Example
+    version: v1.0
+servers:
+    # Added by API Auto Mocking Plugin
+    - description: SwaggerHub API Auto Mocking
+      url: https://virtserver.swaggerhub.com/jeffrey.rogers/AcmeStoreExample/v1.0
+components:
+    schemas:
+        Product:
+            type: object
+            properties:
+                category:
+                    description: The product category
+                    enum: [Electronics, Sporting Goods, Other]
+                    type: string
+                id:
+                    description: The primary key
+                    type: integer
+                    format: int64
+                name:
+                    description: The name of the product
+                    type: string
+                price:
+                    description: The price of the product
+                    type: number
+                    format: double
+                stocked:
+                    description: Indicates if the product is in stock
+                    type: boolean
+paths:
+    "/products":
+        get:
+            operationId: getProductsPage
+            tags: ["Product"]
+            description: Retrieves the list of products. Results can be paginated, filtered, searched, and sorted.
+            parameters:
+                - in: query
+                  name: filter
+                  schema:
+                      type: string
+                - in: query
+                  name: page
+                  schema:
+                      type: integer
+                - in: query
+                  name: pageSize
+                  schema:
+                      type: integer
+                - in: query
+                  name: search
+                  schema:
+                      type: string
+                - in: query
+                  name: sort
+                  schema:
+                      type: string
+            responses:
+                200:
+                    description: ""
+                    content:
+                        application/json:
+                            schema:
+                                items:
+                                    $ref: "#/components/schemas/Product"
+                                type: array
+                        application/xml:
+                            schema:
+                                items:
+                                    $ref: "#/components/schemas/Product"
+                                type: array
+        post:
+            operationId: postProduct
+            tags: ["Product"]
+            description: Create a new product.
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/Product"
+                    application/xml:
+                        schema:
+                            $ref: "#/components/schemas/Product"
+            responses:
+                200:
+                    description: ""
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Product"
+                        application/xml:
+                            schema:
+                                $ref: "#/components/schemas/Product"
+    "/products/{productId}":
+        get:
+            operationId: getProduct
+            tags: ["Product"]
+            description: Retrieves the product via its ID.
+            parameters:
+                - name: productId
+                  in: path
+                  required: true
+                  schema:
+                      type: integer
+                      format: int64
+            responses:
+                200:
+                    description: ""
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Product"
+                        application/xml:
+                            schema:
+                                $ref: "#/components/schemas/Product"
+        put:
+            operationId: putProduct
+            tags: ["Product"]
+            description: Replaces the product with the information sent in the request body. Any missing fields are deleted, unless they are required.
+            parameters:
+                - name: productId
+                  in: path
+                  required: true
+                  schema:
+                      type: integer
+                      format: int64
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/Product"
+                    application/xml:
+                        schema:
+                            $ref: "#/components/schemas/Product"
+            responses:
+                200:
+                    description: Default Response
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Product"
+                        application/xml:
+                            schema:
+                                $ref: "#/components/schemas/Product"
+        patch:
+            operationId: patchProduct
+            tags: ["Product"]
+            description: Replaces the product with the information sent in the request body. Any missing fields are deleted, unless they are required.
+            parameters:
+                - name: productId
+                  in: path
+                  required: true
+                  schema:
+                      type: integer
+                      format: int64
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/Product"
+                    application/xml:
+                        schema:
+                            $ref: "#/components/schemas/Product"
+            responses:
+                200:
+                    description: ""
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Product"
+                        application/xml:
+                            schema:
+                                $ref: "#/components/schemas/Product"
+        delete:
+            operationId: deleteProduct
+            tags: ["Product"]
+            description: Deletes the product and returns a 204 if the operation succeeds.
+            parameters:
+                - name: productId
+                  in: path
+                  required: true
+                  schema:
+                      type: integer
+                      format: int64
+            responses:
+                204:
+                    description: ""
+                    content:
+                        application/json: {}
+                        application/xml: {}

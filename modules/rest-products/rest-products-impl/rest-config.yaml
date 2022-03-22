@@ -1,0 +1,9 @@
+apiDir: "../rest-products-api/src/main/java"
+apiPackagePath: "com.acme.rest.store.products"
+application:
+    baseURI: "/rest-products"
+    className: "RestProductsApplication"
+    name: "RestProducts"
+author: "c02y33mljgh6"
+clientDir: "../rest-products-client/src/main/java"
+testDir: "../rest-products-test/src/testIntegration/java"
