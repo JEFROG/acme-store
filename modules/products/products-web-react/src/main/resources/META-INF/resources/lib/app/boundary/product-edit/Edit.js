@@ -114,7 +114,7 @@ export default function Edit({formik}) {
 				{/* Edit and Cancel buttons */}
 
 				<ClayButton.Group spaced={true}>
-					<ClayButton type="submit" disabled={!formik.isValid}>{Liferay.Language.get('edit')}</ClayButton>
+					<ClayButton type="submit" disabled={!formik.isValid}>{Liferay.Language.get('save')}</ClayButton>
 					<ClayButton onClick={(e) => { e.preventDefault(); formik.handleReset(e)}} displayType="secondary" type="button">{Liferay.Language.get('cancel')}</ClayButton>
 				</ClayButton.Group>
 

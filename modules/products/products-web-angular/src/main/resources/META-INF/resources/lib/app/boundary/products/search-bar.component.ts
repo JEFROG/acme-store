@@ -18,7 +18,7 @@ import {config} from "../../config";
                         <div class="custom-control custom-checkbox">
                             <label>
                                 <input [formControl]="filterControl" class="custom-control-input" type="checkbox" (change)="onChange()"/>
-                                <span class="custom-control-label" style="padding-left: 10px;">Show in stock only</span>
+                                <span class="custom-control-label" style="padding-left: 10px;">{{Liferay.Language.get('show-in-stock-only')}}</span>
                             </label>
                         </div>
                     </li>
@@ -35,7 +35,7 @@ import {config} from "../../config";
                                     <input
                                             [formControl]="searchControl"
                                             class="form-control input-group-inset input-group-inset-after"
-                                            placeholder="Search for..."
+                                            placeholder=Liferay.Language.get('search')
                                             type="text"
                                             (keyup)="onSearch($event)"
                                     />

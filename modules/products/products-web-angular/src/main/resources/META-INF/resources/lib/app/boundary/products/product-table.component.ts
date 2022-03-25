@@ -12,8 +12,8 @@ import { config } from "../../config";
 			<table class="table">
 				<thead>
 					<tr>
-						<th>Name</th>
-						<th>Price</th>
+						<th>{{Liferay.Language.get('name')}}</th>
+						<th>{{Liferay.Language.get('price')}}</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -75,10 +75,10 @@ import { config } from "../../config";
 				</div>
 				<div class="c-empty-state-title">
 					<span class="text-truncate-inline">
-						<span class="text-truncate">Product Search</span>
+						<span class="text-truncate">{{Liferay.Language.get('product-search')}}</span>
 					</span>
 				</div>
-				<div class="c-empty-state-text">Sorry, no products match the search criteria</div>
+				<div class="c-empty-state-text">{{Liferay.Language.get('sorry-there-are-no-products-that-match-the-search-criteria')}}</div>
 			</div>
 		</ng-template>
 	`,

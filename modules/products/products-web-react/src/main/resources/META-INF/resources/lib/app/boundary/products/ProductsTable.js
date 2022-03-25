@@ -17,7 +17,7 @@ export default function ProductsTable({page})  {
 		description={Liferay.Language.get('sorry-there-are-no-products-that-match-the-search-criteria')}
 		imgProps={{ alt: "Alternative Text", title: "Product Search" }}
 		imgSrc={`${imgSrc}/states/search_state.gif`}
-		title={Liferay.Language.get('no-products-found')}
+		title={Liferay.Language.get('product-search')}
 	/>
 
 

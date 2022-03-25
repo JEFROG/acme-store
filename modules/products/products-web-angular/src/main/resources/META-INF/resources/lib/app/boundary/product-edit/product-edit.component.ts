@@ -15,7 +15,7 @@ import { config } from "../../config";
 				
 				<!-- form header -->
 				<div class="sheet-header">
-					<h2 class="sheet-title">Edit Product</h2>
+					<h2 class="sheet-title">{{Liferay.Language.get('edit-product')}}</h2>
 					<div class="sheet-text">
 					</div>
 				</div>
@@ -26,7 +26,7 @@ import { config } from "../../config";
 					<div class="form-group">
 						
 						<label for="_category">
-							Category
+							{{Liferay.Language.get('category')}}
 							<span class="reference-mark text-warning">
 								<svg 
 									aria-hidden="true" 
@@ -43,8 +43,8 @@ import { config } from "../../config";
 							formControlName="category" 
 							class="form-control"
 						>
-							<option>Electronics</option>
-							<option>Sporting Goods</option>
+							<option value="Electronics">{{Liferay.Language.get('electronics')}}</option>
+							<option value="Sporting Goods">{{Liferay.Language.get('sporting-goods')}}</option>
 						</select>
 						
 					</div>
@@ -53,7 +53,7 @@ import { config } from "../../config";
 					<div class="form-group">
 						
 						<label for="_name">
-							Name
+							{{Liferay.Language.get('name')}}
 							<span class="reference-mark text-warning">
 								
 								<svg 
@@ -70,7 +70,6 @@ import { config } from "../../config";
 							id="_name"
 							formControlName="name"
 							class="form-control"
-							placeholder="Name"
 							type="text"
 						/>
 					</div>
@@ -79,7 +78,7 @@ import { config } from "../../config";
 					<div class="form-group">
 						
 						<label for="_price">
-							Price
+							{{Liferay.Language.get('price')}}
 							<span class="reference-mark text-warning">
 								
 								<svg 
@@ -96,7 +95,6 @@ import { config } from "../../config";
 							id="_price"
 							formControlName="price"
 							class="form-control"
-							placeholder="Price"
 							type="text"
 						/>
 					</div>
@@ -112,7 +110,7 @@ import { config } from "../../config";
 							value=""
 						/>
 						<label class="form-check-label" for="_stocked">
-							Product is in stock
+							{{Liferay.Language.get('product-is-in-stock')}}
 						</label>
 					</div>
 				</div>
@@ -127,7 +125,7 @@ import { config } from "../../config";
 								class="btn btn-primary" 
 								type="submit" 
 								[disabled]="updateForm.invalid"
-							>Save</button>
+							>{{Liferay.Language.get('save')}}</button>
 						</div>
 						
 						<div class="btn-group-item">
@@ -135,7 +133,7 @@ import { config } from "../../config";
 								class="btn btn-secondary" 
 								type="button" 
 								(click)="onCancel()"
-							>Cancel</button>
+							>{{Liferay.Language.get('cancel')}}</button>
 						</div>
 						
 					</div>

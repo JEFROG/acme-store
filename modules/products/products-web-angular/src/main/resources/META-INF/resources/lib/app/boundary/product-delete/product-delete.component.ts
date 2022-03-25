@@ -13,7 +13,7 @@ import { Product } from "../../entity/product";
 				
 				<!-- header -->
 				<div class="sheet-header">
-					<h1 class="sheet-title">Delete Product</h1>
+					<h1 class="sheet-title">{{Liferay.Language.get('delete-product')}}</h1>
 					<h2 class="sheet-title">{{product.name}}</h2>
 				</div>
 				
@@ -29,7 +29,7 @@ import { Product } from "../../entity/product";
 							value=""
 						/>
 						<label class="form-check-label" for="_delete">
-							Click checkbox to confirm deletion
+							{{Liferay.Language.get('click-checkbox-to-confirm-deletion')}}
 						</label>
 					</div>
 					
@@ -45,7 +45,7 @@ import { Product } from "../../entity/product";
 								[disabled]="deleteForm.invalid" 
 								class="btn btn-secondary" 
 								type="submit"
-							>Delete</button>
+							>{{Liferay.Language.get('delete')}}</button>
 						</div>
 						
 						<div class="btn-group-item">
@@ -53,7 +53,7 @@ import { Product } from "../../entity/product";
 								class="btn btn-primary" 
 								type="button" 
 								(click)="onCancel()"
-							>Cancel</button>
+							>{{Liferay.Language.get('cancel')}}</button>
 						</div>
 						
 					</div>

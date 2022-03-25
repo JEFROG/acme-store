@@ -5,6 +5,8 @@ import { FormControl, FormGroup, Validators } from "@angular/forms"
 import { Product } from "../../entity/product";
 import { config } from "../../config";
 
+
+
 @Component({
 	selector: 'app-product-add-ui',
 	template: `
@@ -13,7 +15,7 @@ import { config } from "../../config";
 			<div class="sheet sheet-lg">
 				
 				<div class="sheet-header">
-					<h2 class="sheet-title">Add Product</h2>
+					<h2 class="sheet-title">{{Liferay.Language.get('add-product')}}</h2>
 				</div>
 				
 				<div class="sheet-section">
@@ -22,7 +24,7 @@ import { config } from "../../config";
 					<div class="form-group">
 						
 						<label for="_category">
-							Category
+							{{Liferay.Language.get('category')}}
 							<span class="reference-mark text-warning">
 								<svg 
 									aria-hidden="true" 
@@ -41,9 +43,9 @@ import { config } from "../../config";
 							formControlName="category" 
 							class="form-control"
 						>
-							<option value="" disabled selected>Select a category</option>
-							<option>Electronics</option>
-							<option>Sporting Goods</option>
+							<option value="" disabled selected>{{Liferay.Language.get('select-a-category')}}</option>
+							<option value="Electronics">{{Liferay.Language.get('electronics')}}</option>
+							<option value="Sporting Goods">{{Liferay.Language.get('sporting-goods')}}</option>
 						</select>
 					</div>
 					
@@ -51,7 +53,7 @@ import { config } from "../../config";
 					<div class="form-group">
 						
 						<label for="_name">
-							Name
+							{{Liferay.Language.get('name')}}
 							<span class="reference-mark text-warning">
 								<svg 
 									aria-hidden="true" 
@@ -67,7 +69,7 @@ import { config } from "../../config";
 							id="_name"
 							formControlName="name"
 							class="form-control"
-							placeholder="Enter Name"
+							placeholder=Liferay.Language.get('enter-name')
 							type="text"
 						/>
 					</div>
@@ -76,7 +78,7 @@ import { config } from "../../config";
 					<div class="form-group">
 						
 						<label for="_price">
-							Price
+							{{Liferay.Language.get('price')}}
 							<span class="reference-mark text-warning">
 								<svg 
 									aria-hidden="true" 
@@ -92,7 +94,7 @@ import { config } from "../../config";
 							id="_price"
 							formControlName="price"
 							class="form-control"
-							placeholder="Enter Price"
+							placeholder=Liferay.Language.get('enter-price')
 							type="text"
 						/>
 					</div>
@@ -110,7 +112,7 @@ import { config } from "../../config";
 						<label 
 							class="form-check-label" 
 							for="_stocked">
-							Product is in stock
+							{{Liferay.Language.get('product-is-in-stock')}}
 						</label>
 					</div>
 					
@@ -126,7 +128,7 @@ import { config } from "../../config";
 								class="btn btn-primary" 
 								type="submit" 
 								[disabled]="addForm.invalid"
-							>Add</button>
+							>{{Liferay.Language.get('add')}}</button>
 						</div>
 						
 						<div class="btn-group-item">
@@ -134,7 +136,7 @@ import { config } from "../../config";
 								class="btn btn-secondary" 
 								type="button" 
 								(click)="onCancel()"
-							>Cancel</button>
+							>{{Liferay.Language.get('cancel')}}</button>
 							
 						</div>
 						
