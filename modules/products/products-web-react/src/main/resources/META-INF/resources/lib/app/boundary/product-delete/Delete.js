@@ -23,7 +23,7 @@ export default function Delete ({product, formik})  {
 	return (
 		<div className={"sheet sheet-lg"}>
 			<div className="sheet-header">
-				<h2 className="sheet-title">Delete Product</h2>
+				<h2 className="sheet-title">{Liferay.Language.get('delete-product')}</h2>
 				<div className="sheet-text">
 					{product.name}
 				</div>
@@ -35,8 +35,8 @@ export default function Delete ({product, formik})  {
 					<ClayCheckbox
 						id="confirmDelete"
 						name="confirmDelete"
-						aria-label="Click checkbox to confirm deletion"
-						label={"Click checkbox to confirm deletion"}
+						aria-label={Liferay.Language.get('click-checkbox-to-confirm-deletion')}
+						label={Liferay.Language.get('click-checkbox-to-confirm-deletion')}
 						onChange={formik.handleChange}
 						onBlur={formik.handleBlur}
 						checked={formik.values.confirmDelete}
@@ -55,8 +55,8 @@ export default function Delete ({product, formik})  {
 				{/* Delete and Cancel buttons */}
 
 				<ClayButton.Group spaced={true}>
-					<ClayButton type="submit" disabled={!formik.isValid}>{"Delete"}</ClayButton>
-					<ClayButton onClick={(e) => { e.preventDefault(); formik.handleReset(e)}} displayType="secondary" type="button">{"Cancel"}</ClayButton>
+					<ClayButton type="submit" disabled={!formik.isValid}>{Liferay.Language.get('delete')}</ClayButton>
+					<ClayButton onClick={(e) => { e.preventDefault(); formik.handleReset(e)}} displayType="secondary" type="button">{Liferay.Language.get('cancel')}</ClayButton>
 				</ClayButton.Group>
 
 			</ClayForm>

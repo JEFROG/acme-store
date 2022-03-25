@@ -27,7 +27,7 @@ export default function ProductsContainer() {
 			.catch(error => setError(error.message));
 	}, [searchText, inStockOnly]);
 
-	if(error) return <ClayEmptyState title="Error" description={error} imgSrc={`${imgSrc}/states/empty_state.gif`}/>
+	if(error) return <ClayEmptyState title={Liferay.Language.get('error')} description={error} imgSrc={`${imgSrc}/states/empty_state.gif`}/>
 
 	if(!page) return <ClayLoadingIndicator/>
 

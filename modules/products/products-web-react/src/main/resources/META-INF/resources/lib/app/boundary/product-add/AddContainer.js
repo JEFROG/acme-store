@@ -33,13 +33,13 @@ export default function AddContainer() {
 		validate: values => {
 			let errors = {};
 			if(!values.name) {
-				errors.name = 'Required!';
+				errors.name = Liferay.Language.get('required');
 			}
 			if(!values.category) {
-				errors.category = 'Required!';
+				errors.category = Liferay.Language.get('required');
 			}
 			if(!values.price) {
-				errors.price = 'Required!';
+				errors.price = Liferay.Language.get('required');
 			}
 
 			return errors;
@@ -57,7 +57,7 @@ export default function AddContainer() {
 		},
 	});
 
-	if(error) return <ClayEmptyState title="Error" description={error} imgSrc={`${imgSrc}/states/empty_state.gif`}/>
+	if(error) return <ClayEmptyState title={Liferay.Language.get('error')} description={error} imgSrc={`${imgSrc}/states/empty_state.gif`}/>
 
 	return (
 

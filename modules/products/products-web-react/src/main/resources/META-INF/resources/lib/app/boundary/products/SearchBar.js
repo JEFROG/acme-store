@@ -18,7 +18,7 @@ export default function SearchBar({searchText, setSearchText, setInStockOnly})  
 				<ClayManagementToolbar.ItemList>
 					<ClayManagementToolbar.Item>
 						<ClayCheckbox
-							label={"Show in stock only"}
+							label={Liferay.Language.get('show-in-stock-only')}
 							onClick={(e) => setInStockOnly(e.target.checked)}
 						/>
 					</ClayManagementToolbar.Item>
@@ -30,7 +30,7 @@ export default function SearchBar({searchText, setSearchText, setInStockOnly})  
 							<ClayInput
 								type="text"
 								value={searchText}
-								placeholder="Search..."
+								placeholder={Liferay.Language.get('search')}
 								className="form-control input-group-inset input-group-inset-after"
 								onChange={(e) => {
 									setSearchText(e.target.value);

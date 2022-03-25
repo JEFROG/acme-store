@@ -27,27 +27,27 @@ export default function Edit({formik}) {
 	return (
 		<div className={"sheet sheet-lg"}>
 			<div className="sheet-header">
-				<h2 className="sheet-title">Edit Product</h2>
+				<h2 className="sheet-title">{Liferay.Language.get('edit-product')}</h2>
 			</div>
 			<ClayForm onSubmit={(e) => { e.preventDefault(); formik.handleSubmit(e)}}>
 
 				{/* category field */}
 
 				<ClayForm.Group className="form-group-sm">
-					<label htmlFor="category">Category
+					<label htmlFor="category">{Liferay.Language.get('category')}
 						<ClayIcon symbol="asterisk" className={"lexicon-icon lexicon-icon-asterisk reference-mark text-warning"} spritemap={spritemap} />
 					</label>
 					<ClaySelect
 						id="category"
 						name="category"
 						value={formik.values.category}
-						aria-label="Select Category"
+						aria-label={Liferay.Language.get('category')}
 						onChange={formik.handleChange}
 						onBlur={formik.handleBlur}
 					>
-						<ClaySelect.Option disabled label="Select a category" value=""></ClaySelect.Option>
-						<ClaySelect.Option label="Electronics" value="Electronics"></ClaySelect.Option>
-						<ClaySelect.Option label="Sporting Goods" value="Sporting Goods"></ClaySelect.Option>
+						<ClaySelect.Option disabled label={Liferay.Language.get('select-a-category')} value=""></ClaySelect.Option>
+						<ClaySelect.Option label={Liferay.Language.get('electronics')} value="Electronics"></ClaySelect.Option>
+						<ClaySelect.Option label={Liferay.Language.get('sporting-goods')} value="Sporting Goods"></ClaySelect.Option>
 					</ClaySelect>
 					{formik.errors.category  && formik.touched.category &&
 						<div className="c-mt-3">
@@ -59,14 +59,14 @@ export default function Edit({formik}) {
 				{/* name field */}
 
 				<ClayForm.Group className="form-group-sm">
-					<label htmlFor="name">Name
+					<label htmlFor="name">{Liferay.Language.get('name')}
 						<ClayIcon symbol="asterisk" className={"lexicon-icon lexicon-icon-asterisk reference-mark text-warning"} spritemap={spritemap} />
 					</label>
 					<ClayInput
 						id="name"
 						name="name"
 						value={formik.values.name}
-						placeholder="Enter name..."
+						placeholder={Liferay.Language.get('enter-name')}
 						type="text"
 						onChange={formik.handleChange}
 						onBlur={formik.handleBlur}
@@ -81,14 +81,14 @@ export default function Edit({formik}) {
 				{/* price field */}
 
 				<ClayForm.Group className="form-group-sm">
-					<label htmlFor="price">Price
+					<label htmlFor="price">{Liferay.Language.get('price')}
 						<ClayIcon symbol="asterisk" className={"lexicon-icon lexicon-icon-asterisk reference-mark text-warning"} spritemap={spritemap} />
 					</label>
 					<ClayInput
 						id="price"
 						name="price"
 						value={formik.values.price}
-						placeholder="Enter price..."
+						placeholder={Liferay.Language.get('enter-price')}
 						type="text"
 						onChange={formik.handleChange}
 						onBlur={formik.handleBlur}
@@ -105,8 +105,8 @@ export default function Edit({formik}) {
 				<ClayCheckbox
 					id="stocked"
 					name="stocked"
-					aria-label="Product is in stock"
-					label="Product is in stock"
+					aria-label={Liferay.Language.get('product-is-in-stock')}
+					label={Liferay.Language.get('product-is-in-stock')}
 					onChange={formik.handleChange}
 					checked={formik.values.stocked}
 				/>
@@ -114,8 +114,8 @@ export default function Edit({formik}) {
 				{/* Edit and Cancel buttons */}
 
 				<ClayButton.Group spaced={true}>
-					<ClayButton type="submit" disabled={!formik.isValid}>{"Edit"}</ClayButton>
-					<ClayButton onClick={(e) => { e.preventDefault(); formik.handleReset(e)}} displayType="secondary" type="button">{"Cancel"}</ClayButton>
+					<ClayButton type="submit" disabled={!formik.isValid}>{Liferay.Language.get('edit')}</ClayButton>
+					<ClayButton onClick={(e) => { e.preventDefault(); formik.handleReset(e)}} displayType="secondary" type="button">{Liferay.Language.get('cancel')}</ClayButton>
 				</ClayButton.Group>
 
 			</ClayForm>

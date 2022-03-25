@@ -29,7 +29,7 @@ export default function DeleteContainer() {
 		validate: values => {
 			let errors = {};
 			if(!values.confirmDelete) {
-				errors.confirmDelete = 'Must check box to enable deletion of this product';
+				errors.confirmDelete = Liferay.Language.get('must-check-box-to-enable-deletion-of-this-product');
 			}
 
 			return errors;
@@ -57,7 +57,7 @@ export default function DeleteContainer() {
 			.catch(error => setError(error.message));
 	}, []);
 
-	if(error) return <ClayEmptyState title="Error" description={error} imgSrc={`${imgSrc}/states/empty_state.gif`}/>
+	if(error) return <ClayEmptyState title={Liferay.Language.get('error')} description={error} imgSrc={`${imgSrc}/states/empty_state.gif`}/>
 
 	if(!product) return <ClayLoadingIndicator/>
 

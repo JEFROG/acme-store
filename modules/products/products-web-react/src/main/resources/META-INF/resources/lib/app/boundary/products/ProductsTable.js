@@ -14,10 +14,10 @@ export default function ProductsTable({page})  {
 	const{ imgSrc } = useApi();
 
 	if(!page.totalCount)  return <ClayEmptyState
-		description="Sorry, there are no products found"
-		imgProps={{ alt: "Alternative Text", title: "Product Seach" }}
+		description={Liferay.Language.get('sorry-there-are-no-products-that-match-the-search-criteria')}
+		imgProps={{ alt: "Alternative Text", title: "Product Search" }}
 		imgSrc={`${imgSrc}/states/search_state.gif`}
-		title="No products found"
+		title={Liferay.Language.get('no-products-found')}
 	/>
 
 
@@ -44,8 +44,8 @@ export default function ProductsTable({page})  {
 			<ClayTable hover={false} borderless={true}>
 				<ClayTable.Head>
 					<ClayTable.Row>
-						<ClayTable.Cell headingCell>Name</ClayTable.Cell>
-						<ClayTable.Cell headingCell>Price</ClayTable.Cell>
+						<ClayTable.Cell headingCell>{Liferay.Language.get('name')}</ClayTable.Cell>
+						<ClayTable.Cell headingCell>{Liferay.Language.get('price')}</ClayTable.Cell>
 					</ClayTable.Row>
 				</ClayTable.Head>
 				<ClayTable.Body>
